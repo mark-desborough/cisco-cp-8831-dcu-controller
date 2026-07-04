@@ -2,7 +2,9 @@
 Using a Cisco conference phone interface as a keypad and lcd screen over usb
 
 Currently this applies to the V01 model (`CP-8831-DCU-S-V01`). It contains a Texas Instruments LM3S5R31 ARM Cortex-M3 microcontroller.
+
 There is a second version which I belive switches to a ST (STMicroelectronics) microcontroller, but without having a V02 I am only guessing.
+
 As far as I can tell the communication protocol is identical. The USB device/vendor ID may be different.
 
 ## Terminology
