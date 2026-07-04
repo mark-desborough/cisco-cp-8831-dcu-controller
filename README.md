@@ -46,3 +46,10 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0009", MODE="0660"
 | Dimensions | Control panel: 5.75 x 5.0 x 1.0 in. (14.61 x 12.7 x 2.54 cm) |
 | Weight | DCU 0.56 lbs. (253.0 grams) |
 | Display | 3.25 x 1.5 in. (8.26 x 3.81 cm); 396 x 162 pixels. |
+
+## Known Firmware Versions: 
+| Microcontroller | Phone Firmware package | Filename within rootfs | Firmware Version String |
+| --- | --- | --- | --- |
+| ST | cmterm-8831-sip.10-3-1SR6-4.cop.sgn | `/sbin/beignet_dcu_st.dfu` | Revolabs dcu dcu7938.9-3-2-1-01 @30333+Tue Jan 7 18:23:40 EST 2020 |
+| LM3S5R31 | cmterm-8831-sip.10-3-1SR6-4.cop.sgn | `/sbin/beignet_dcu.dfu` | Revolabs dcu dcu7938.9-3-2-1-01 @30333+Tue Jan 7 18:23:40 EST 2020 |
+| LM3S5R31 | sip8831.9-3-3-5 | unknown | Revolabs dcu dcu7938.9-3-2-1-01 @10543+Fri Mar 29 12:48:10 EDT 2013 |
