@@ -2,7 +2,7 @@
 Using a Cisco conference phone interface as a keypad and lcd screen over usb
 
 ## Hardware Revisions
-Currently this applies to the V01 model (`CP-8831-DCU-S-V01`). It contains a Texas Instruments LM3S5R31 ARM Cortex-M3 microcontroller.
+Currently this applies to the V01 model (`CP-8831-DCU-S-V01`). It contains a Texas Instruments `LM3S5R31 ARM Cortex-M3` microcontroller.
 
 There is a second version which I belive switches to a ST (STMicroelectronics) microcontroller, but without having a V02 I am only guessing.
 
@@ -19,6 +19,19 @@ The best (cheapest) method I have used is to take a regular USB-A cable and spli
 - An adapter for plugging this isn't a regular PC is not common (i.e a reverse USB OTG) cable. 
 - There appears to be a "USB 2.0 Male to Micro USB Female Connector Adapter" which would most likely work.
 - The "USB-A male to USB-A male" does have some uses, but feels like a power extension cord with 2 male sockets (most use cases it is a bad idea).
+
+### USB Device Permission
+As root add a udev rule and then `udevadm control --reload && udevadm trigger` to reload the rules. When the specific device is added it will have the more open permissions added.  
+A more rigid group-based access makes more sense (like the dialout group) and a non-privileged user/service running the python code for screen management.  
+
+```
+#/etc/udev/rules.d/99-lcd-keypad.rules
+#Product: Composite HID Mouse and CDC Serial Example (everyone has read/write)
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0009", MODE="0666"
+
+#Product: Device Firmware Upgrade (root only)
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0009", MODE="0660"
+```
 
 ## Terminology
 | Term | Description |
