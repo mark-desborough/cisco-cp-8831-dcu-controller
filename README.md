@@ -1,6 +1,10 @@
 # cisco-cp-8831-dcu-controller
 Using a Cisco conference phone interface as a keypad and lcd screen over usb
 
+## Overview
+Using the DCU as a cheap display for your project (with optional key input):
+![example screen](./pictures/unit02_dot_graphics_thumb.jpg)
+
 ## Hardware Revisions
 Currently this applies to the V01 model (`CP-8831-DCU-S-V01`). It contains a Texas Instruments `LM3S5R31 ARM Cortex-M3` microcontroller.
 
