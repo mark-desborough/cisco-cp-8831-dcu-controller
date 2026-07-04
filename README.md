@@ -1,11 +1,24 @@
 # cisco-cp-8831-dcu-controller
 Using a Cisco conference phone interface as a keypad and lcd screen over usb
 
+## Hardware Revisions
 Currently this applies to the V01 model (`CP-8831-DCU-S-V01`). It contains a Texas Instruments LM3S5R31 ARM Cortex-M3 microcontroller.
 
 There is a second version which I belive switches to a ST (STMicroelectronics) microcontroller, but without having a V02 I am only guessing.
 
 As far as I can tell the communication protocol is identical. The USB device/vendor ID may be different.
+
+## USB Cable
+I believe this is the biggest hurdle that has stopped anyone casually poking this device:
+- The stock USB connection is a male MicroUSB. The sort I would most commonly associate with a 2010 era phone charger.
+- Within the unit it connects with a JST connector (The cable end says HR 12). It is 1cm wide with 5 pins (5v, data+ and data-,ground, shield).
+- A molded grommet is attached to the cable and screwed down at the entry-point into the case.
+- Within my sheath the cable is colour-coded well. Red/Black/Green/White + outer shield
+
+The best (cheapest) method I have used is to take a regular USB-A cable and splice it onto the end that would plug into the 8831 base unit.
+- An adapter for plugging this isn't a regular PC is not common (i.e a reverse USB OTG) cable. 
+- There appears to be a "USB 2.0 Male to Micro USB Female Connector Adapter" which would most likely work.
+- The "USB-A male to USB-A male" does have some uses, but feels like a power extension cord with 2 male sockets (most use cases it is a bad idea).
 
 ## Terminology
 | Term | Description |
