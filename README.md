@@ -39,10 +39,12 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0009", MODE="0660"
 | CP-8831-DCU-S= | Spare Cisco Unified IP Conference Phone 8831 Display Control Unit (DCU) |
 | Wired control panel | The panel allows easy control of the unit and viewing of the display without having to move the entire unit. |
 | Display | The conference station has a large high-resolution, graphical 3.5-inch backlit display (396 x 162 pixels). |
+| Display Control Unit | Written on the PCB as "Beignet - Display Control Unit (2) 1000705-00 Rev D" |
 
 ## Specifications
 | Type | Measurement |
 | :--- | :--- |
+| Features | Adjustable display brightness (this is currently questionable as the contrast seems to be the only thing to adjust) | 
 | Dimensions | Control panel: 5.75 x 5.0 x 1.0 in. (14.61 x 12.7 x 2.54 cm) |
 | Weight | DCU 0.56 lbs. (253.0 grams) |
 | Display | 3.25 x 1.5 in. (8.26 x 3.81 cm); 396 x 162 pixels. |
@@ -53,3 +55,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0009", MODE="0660"
 | ST | cmterm-8831-sip.10-3-1SR6-4.cop.sgn | `/sbin/beignet_dcu_st.dfu` | Revolabs dcu dcu7938.9-3-2-1-01 @30333+Tue Jan 7 18:23:40 EST 2020 |
 | LM3S5R31 | cmterm-8831-sip.10-3-1SR6-4.cop.sgn | `/sbin/beignet_dcu.dfu` | Revolabs dcu dcu7938.9-3-2-1-01 @30333+Tue Jan 7 18:23:40 EST 2020 |
 | LM3S5R31 | sip8831.9-3-3-5 | unknown | Revolabs dcu dcu7938.9-3-2-1-01 @10543+Fri Mar 29 12:48:10 EDT 2013 |
+
+### Firmware hints:
+The Cisco 7937G is a variant of the Polycom IP 7000 and has the same programming instructions. The 7937G connects to the "Revolabs Single Channel System" via a 10-pin network cable. [Revolabs Ip Phone Ip7000 User Manual](https://usermanual.wiki/Revolabs/RevolabsIpPhoneIp7000UsersManual523886.1844482001.pdf)
+It almost looks from the dcu7938 designation this controller is the next iteration of the Cisco 7937G Unified IP Conference Station (CP-7937G). It does feature a lower resolution screen (255 x 128), but appears very similar in most ways (except for having a cable).
